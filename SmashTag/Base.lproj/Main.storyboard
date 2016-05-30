@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Tweet Table View Controller-->
         <scene sceneID="i2g-97-vyy">
             <objects>
-                <tableViewController id="tG1-vv-xO1" sceneMemberID="viewController">
+                <tableViewController id="tG1-vv-xO1" customClass="TweetTableViewController" customModule="SmashTag" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="808-NT-Gdp">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
