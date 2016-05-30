@@ -9,8 +9,22 @@
 import UIKit
 import Twitter
 
-class TweetTableViewController: UITableViewController
+class TweetTableViewController: UITableViewController, UITextFieldDelegate
 {
+    @IBOutlet weak var searchTextField: UITextField!
+    {
+        didSet{
+            searchTextField.delegate = self
+            searchTextField.text = searchText
+        }
+    }
+    
+    @IBAction func refresh(sender: UIRefreshControl)
+    {
+        searchForTweets()
+    }
+    
+    
     var tweets = [Array<Twitter.Tweet>]()
     {
         didSet
@@ -64,10 +78,16 @@ class TweetTableViewController: UITableViewController
         
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        searchTextField.resignFirstResponder()
+        searchText = searchTextField.text
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        searchText = "#stanford"
+        tableView.estimatedRowHeight  = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -93,8 +113,10 @@ class TweetTableViewController: UITableViewController
         let cell = tableView.dequeueReusableCellWithIdentifier("Tweet", forIndexPath: indexPath)
 
         let tweet = tweets[indexPath.section][indexPath.row]
-        cell.textLabel?.text = tweet.text
-        cell.detailTextLabel?.text = tweet.user.name
+        if let tweetCell = cell as? TweetTableViewCell
+        {
+            tweetCell.tweet = tweet
+        }
         return cell
     }
     

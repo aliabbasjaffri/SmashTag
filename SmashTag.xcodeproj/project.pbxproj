@@ -13,6 +13,7 @@
 		5D03BF021CFB58FA00338143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D03BF001CFB58FA00338143 /* LaunchScreen.storyboard */; };
 		5D03BF0B1CFB597D00338143 /* TweetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D03BF0A1CFB597D00338143 /* TweetTableViewController.swift */; };
 		5DBC6A411CFCA82A002D02BF /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBC6A401CFCA82A002D02BF /* Twitter.framework */; };
+		5DBC6A431CFCBBB2002D02BF /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC6A421CFCBBB2002D02BF /* TweetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5D03BF031CFB58FA00338143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D03BF0A1CFB597D00338143 /* TweetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewController.swift; sourceTree = "<group>"; };
 		5DBC6A401CFCA82A002D02BF /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = "../../../../Library/Developer/Xcode/DerivedData/SmashTagTwitter-aorlcfspgmazcidyomcgthufpjbh/Build/Products/Debug-iphoneos/Twitter.framework"; sourceTree = "<group>"; };
+		5DBC6A421CFCBBB2002D02BF /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				5D03BF091CFB593400338143 /* Supporting Files */,
 				5D03BEFB1CFB58FA00338143 /* Main.storyboard */,
 				5D03BF0A1CFB597D00338143 /* TweetTableViewController.swift */,
+				5DBC6A421CFCBBB2002D02BF /* TweetTableViewCell.swift */,
 			);
 			path = SmashTag;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			files = (
 				5D03BEF81CFB58FA00338143 /* AppDelegate.swift in Sources */,
 				5D03BF0B1CFB597D00338143 /* TweetTableViewController.swift in Sources */,
+				5DBC6A431CFCBBB2002D02BF /* TweetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
