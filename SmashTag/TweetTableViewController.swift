@@ -57,25 +57,21 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
 
     private func searchForTweets()
     {
-        if let request = twitterRequest
-        {
+        if let request = twitterRequest {
             lastTwitterRequest = request
-            request.fetchTweets
-            {
-                [weak weakSelf = self] newTweets in
-                
+            request.fetchTweets { [weak weakSelf = self] newTweets in
                 dispatch_async(dispatch_get_main_queue()) {
-                    //if request == weakSelf?.lastTwitterRequest
-                    //{
-                        if !newTweets.isEmpty
-                        {
+                    //if request == weakSelf?.lastTwitterRequest {
+                        if !newTweets.isEmpty {
                             weakSelf?.tweets.insert(newTweets, atIndex: 0)
                         }
                     //}
+                    weakSelf?.refreshControl?.endRefreshing()
                 }
             }
+        } else {
+            self.refreshControl?.endRefreshing()
         }
-        
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
