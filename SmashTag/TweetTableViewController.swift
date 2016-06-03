@@ -44,16 +44,16 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
         
     }
     
-    private var twitterRequest: Twitter.TwitterRequest?
+    private var twitterRequest: Twitter.Request?
     {
         if let query = searchText where !query.isEmpty
         {
-            return Twitter.TwitterRequest(search: query + "-filter:retweets", count: 100)
+            return Twitter.Request(search: query + "-filter:retweets", count: 100)
         }
         return nil
     }
     
-    private var lastTwitterRequest : Twitter.TwitterRequest?
+    private var lastTwitterRequest : Twitter.Request?
 
     private func searchForTweets()
     {
@@ -61,11 +61,11 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
             lastTwitterRequest = request
             request.fetchTweets { [weak weakSelf = self] newTweets in
                 dispatch_async(dispatch_get_main_queue()) {
-                    //if request == weakSelf?.lastTwitterRequest {
+                    if request == weakSelf?.lastTwitterRequest {
                         if !newTweets.isEmpty {
                             weakSelf?.tweets.insert(newTweets, atIndex: 0)
                         }
-                    //}
+                    }
                     weakSelf?.refreshControl?.endRefreshing()
                 }
             }
